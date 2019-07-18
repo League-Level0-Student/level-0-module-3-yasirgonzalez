@@ -4,8 +4,6 @@ import javax.swing.JOptionPane;
 import org.jointheleague.graphical.robot.Robot;
 public class ObedientRobot {
 	public static void main(String[] args) {
-		String color = JOptionPane.showInputDialog("What color fo you want the shapes to be");
-
 		int shape = JOptionPane.showOptionDialog(null, "What shape do you want the robot to draw", "Which shape?", 0, JOptionPane.INFORMATION_MESSAGE, null,
 				new String[] { "Square", "Triangle","Circle" }, null);		
 	if (shape==0) {
@@ -17,12 +15,21 @@ public class ObedientRobot {
 }
 	}	
 	static void Square() {
-		String color = JOptionPane.showInputDialog("what color do you want the square to be?");
 		Robot obey = new Robot();
+		int color = JOptionPane.showOptionDialog(null, "what color do you want the robot to draw with", "Color", 0, JOptionPane.INFORMATION_MESSAGE, null,
+				new String[] { "Blue", "Red","Green" }, null);
+		if (color==0) {
+			obey.penDown();
+			obey.setPenColor(0, 0, 250);
+		}else if(color==1) {
+			obey.penDown();
+			obey.setPenColor(250, 0, 0);
+		}else if(color==2) {
+			obey.penDown();
+			obey.setPenColor(0, 250, 0);
+		}
 		obey.moveTo(250, 500);
 		obey.setSpeed(100);
-		obey.penDown();
-		obey.setPenColor(color);
 		obey.move(350);
 		obey.turn(90);
 		obey.move(350);
@@ -35,9 +42,20 @@ public class ObedientRobot {
 		}
 	static void Triangle() {
 		Robot obey = new Robot();
+		int color = JOptionPane.showOptionDialog(null, "what color do you want the robot to draw with", "Color", 0, JOptionPane.INFORMATION_MESSAGE, null,
+				new String[] { "Blue", "Red","Green" }, null);
+		if (color==0) {
+			obey.penDown();
+			obey.setPenColor(0, 0, 250);
+		}else if(color==1) {
+			obey.penDown();
+			obey.setPenColor(250, 0, 0);
+		}else if(color==2) {
+			obey.penDown();
+			obey.setPenColor(0, 250, 0);
+		}
 		obey.moveTo(400, 100);
 		obey.setSpeed(20);
-		obey.penDown();
 		for(int i=0; i<3; i++) {
 		obey.turn(120);
 		obey.move(350);
@@ -47,9 +65,20 @@ public class ObedientRobot {
 	}
 	static void Circle() {
 		Robot obey = new Robot();
+		int color = JOptionPane.showOptionDialog(null, "what color do you want the robot to draw with", "Color", 0, JOptionPane.INFORMATION_MESSAGE, null,
+				new String[] { "Blue", "Red","Green" }, null);
+		if (color==0) {
+			obey.penDown();
+			obey.setPenColor(0, 0, 250);
+		}else if(color==1) {
+			obey.penDown();
+			obey.setPenColor(250, 0, 0);
+		}else if(color==2) {
+			obey.penDown();
+			obey.setPenColor(0, 250, 0);
+		}
 		obey.moveTo(150, 300);
-		obey.setSpeed(100);
-		obey.penDown();
+		obey.setSpeed(500);
 		for(int i=0; i<360; i++) {
 		obey.move(5);
 		obey.turn(1);
